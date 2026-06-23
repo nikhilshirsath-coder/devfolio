@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <!-- ===== SEO META ===== -->
+  <title>Devfolio — Premium Java Full-Stack & Web Developer for Hire</title>
+  <meta name="description" content="Hire a senior Java Full-Stack developer building Spring Boot APIs, scalable web apps, and conversion-focused websites. View portfolio, case studies and book a free consultation." />
+  <meta name="keywords" content="Java Full Stack Developer, Spring Boot Developer, Freelance Web Developer, Hire Java Developer, REST API Developer, MySQL, React Developer, Software Engineer, Portfolio" />
+  <meta name="author" content="Devfolio" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://devfolio.dev/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Devfolio — Premium Java Full-Stack & Web Developer for Hire" />
+  <meta property="og:description" content="I build powerful software that grows your business. Spring Boot, React, MySQL, and cloud-ready architecture." />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=1200&h=630&fit=crop" />
+  <meta property="og:url" content="https://devfolio.dev/" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Devfolio — Hire a Senior Java Full-Stack Developer" />
+  <meta name="twitter:description" content="Premium freelance software development services for ambitious businesses." />
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=1200&h=630&fit=crop" />
+
+  <!-- Favicon (inline SVG) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%237c5cff'/%3E%3Cstop offset='1' stop-color='%2300d4ff'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='22' fill='url(%23g)'/%3E%3Ctext x='50' y='68' font-family='Arial' font-weight='700' font-size='56' fill='white' text-anchor='middle'%3ED%3C/text%3E%3C/svg%3E" />
+
+  <!-- Schema Markup: Person/Service -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Devfolio Software Studio",
+    "image": "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=800",
+    "description": "Senior freelance Java Full-Stack developer specialising in Spring Boot, REST APIs, MySQL and modern web applications.",
+    "areaServed": "Worldwide",
+    "priceRange": "$$",
+    "sameAs": ["https://github.com/", "https://linkedin.com/"]
+  }
+  </script>
+
+  <!-- Google Analytics (replace G-XXXXXX with real ID) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+
+  <!-- ===== STYLES ===== -->
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+
+  <!-- ===== Loader ===== -->
+  <div class="loader" id="loader">
+    <div class="loader-logo">Devfolio</div>
+    <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+  </div>
+
+  <!-- Custom cursor -->
+  <div class="cursor-dot"></div>
+  <div class="cursor-ring"></div>
+
+  <!-- Scroll progress -->
+  <div class="scroll-progress" id="scroll-progress"></div>
+
+  <!-- Particles canvas (decorative) -->
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- ===== NAVIGATION ===== -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="nav-logo">
+        <span class="nav-logo-icon">D</span>
+        <span>Devfolio</span>
+      </a>
+      <nav class="nav-menu" id="nav-menu" aria-label="Main">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="portfolio.html" class="nav-link">Portfolio</a>
+        <a href="faq.html" class="nav-link">FAQ</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+          <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        </button>
+        <a href="contact.html" class="btn btn-primary btn-sm">Hire Me
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+      <div class="floating-shape shape-1"></div>
+      <div class="floating-shape shape-2"></div>
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-text">
+            <span class="hero-badge">
+              <span class="hero-badge-dot"></span>
+              Available for new projects · Booking July 2026
+            </span>
+            <h1 class="hero-title">
+              <span class="line">Building powerful</span>
+              <span class="line typed-text" id="typed-text" data-words='["Software.","Web Apps.","APIs.","Dashboards.","Experiences."]'>Software.</span>
+              <span class="line">That grows your business.</span>
+            </h1>
+            <p class="hero-desc">
+              I'm a senior Java Full-Stack engineer who turns complex business problems into clean, fast, and scalable software. From Spring Boot APIs to revenue-driving websites — your product, built right the first time.
+            </p>
+            <div class="hero-cta">
+              <a href="contact.html" class="btn btn-primary btn-magnetic">
+                Hire Me Now
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+              <a href="portfolio.html" class="btn btn-secondary">View Portfolio</a>
+              <a href="contact.html#quote" class="btn btn-ghost">Request Quote</a>
+            </div>
+            <div class="hero-trust">
+              <div class="trust-avatars">
+                <img src="https://i.pravatar.cc/80?img=12" alt="Client" loading="lazy" />
+                <img src="https://i.pravatar.cc/80?img=32" alt="Client" loading="lazy" />
+                <img src="https://i.pravatar.cc/80?img=47" alt="Client" loading="lazy" />
+                <img src="https://i.pravatar.cc/80?img=68" alt="Client" loading="lazy" />
+              </div>
+              <div>
+                <div class="trust-stars">★★★★★ <span style="color:var(--text-primary);font-weight:600">5.0</span></div>
+                <div class="trust-text">Trusted by 120+ founders & teams worldwide</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero Visual: 3D Code Card -->
+          <div class="hero-visual">
+            <div class="hero-glow"></div>
+            <div class="hero-card-stack" data-tilt>
+              <div class="hero-main-card">
+                <div class="hero-card-header">
+                  <div class="hero-card-dots"><span></span><span></span><span></span></div>
+                  <div class="hero-card-title">UserController.java</div>
+                </div>
+<pre class="code-block"><span class="code-comment">// Built for scale.</span>
+<span class="code-keyword">@RestController</span>
+<span class="code-keyword">@RequestMapping</span>(<span class="code-str">"/api/users"</span>)
+<span class="code-keyword">public class</span> <span class="code-fn">UserController</span> {
+
+  <span class="code-keyword">@Autowired</span>
+  <span class="code-keyword">private</span> <span class="code-var">UserService</span> service;
+
+  <span class="code-keyword">@GetMapping</span>(<span class="code-str">"/{id}"</span>)
+  <span class="code-keyword">public</span> <span class="code-var">UserDTO</span> <span class="code-fn">getUser</span>(
+      <span class="code-keyword">@PathVariable</span> Long id) {
+    <span class="code-keyword">return</span> service.<span class="code-fn">findById</span>(id);
+  }
+  <span class="code-comment">// → Ship. Measure. Iterate.</span>
+}</pre>
+              </div>
+              <div class="float-card float-card-1">
+                <div class="float-card-icon green">✓</div>
+                <div>
+                  <div class="float-card-label">Deployment</div>
+                  <div class="float-card-value">Live in 14 days</div>
+                </div>
+              </div>
+              <div class="float-card float-card-2">
+                <div class="float-card-icon">⚡</div>
+                <div>
+                  <div class="float-card-label">Performance</div>
+                  <div class="float-card-value">98 / 100 Lighthouse</div>
+                </div>
+              </div>
+              <div class="float-card float-card-3">
+                <div class="float-card-icon pink">★</div>
+                <div>
+                  <div class="float-card-label">Client Rating</div>
+                  <div class="float-card-value">5.0 / 5.0</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== STATS ===== -->
+    <section class="stats">
+      <div class="container">
+        <div class="stats-grid reveal-stagger">
+          <div class="stat-card">
+            <div class="stat-number"><span data-count="180" data-suffix="+">0</span></div>
+            <div class="stat-label">Projects Delivered</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number"><span data-count="120" data-suffix="+">0</span></div>
+            <div class="stat-label">Happy Clients</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number"><span data-count="7" data-suffix="+">0</span></div>
+            <div class="stat-label">Years of Experience</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number"><span data-count="28" data-suffix="">0</span></div>
+            <div class="stat-label">Countries Served</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== MARQUEE: Tech Stack ===== -->
+    <section class="marquee">
+      <div class="container">
+        <p class="marquee-label">Built with a modern, battle-tested stack</p>
+      </div>
+      <div class="marquee-track">
+        <span class="marquee-item">☕ Java</span>
+        <span class="marquee-item">🌱 Spring Boot</span>
+        <span class="marquee-item">🦊 Hibernate</span>
+        <span class="marquee-item">⚛️ React</span>
+        <span class="marquee-item">🐬 MySQL</span>
+        <span class="marquee-item">🐍 Python</span>
+        <span class="marquee-item">🐳 Docker</span>
+        <span class="marquee-item">☁️ AWS</span>
+        <span class="marquee-item">🟢 Node.js</span>
+        <span class="marquee-item">🍃 MongoDB</span>
+        <!-- Duplicate for seamless loop -->
+        <span class="marquee-item">☕ Java</span>
+        <span class="marquee-item">🌱 Spring Boot</span>
+        <span class="marquee-item">🦊 Hibernate</span>
+        <span class="marquee-item">⚛️ React</span>
+        <span class="marquee-item">🐬 MySQL</span>
+        <span class="marquee-item">🐍 Python</span>
+        <span class="marquee-item">🐳 Docker</span>
+        <span class="marquee-item">☁️ AWS</span>
+        <span class="marquee-item">🟢 Node.js</span>
+        <span class="marquee-item">🍃 MongoDB</span>
+      </div>
+    </section>
+
+    <!-- ===== SERVICES PREVIEW ===== -->
+    <section id="services">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">What I Do</span>
+          <h2 class="section-title">Services that move the needle</h2>
+          <p class="section-subtitle">Strategic engineering for products that need to scale, ship and convert — without the agency overhead.</p>
+        </div>
+        <div class="services-grid reveal-stagger">
+
+          <article class="service-card" data-tilt>
+            <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg></div>
+            <h3 class="service-title">Java Full-Stack Development</h3>
+            <p class="service-desc">End-to-end product engineering — Spring Boot, Hibernate, REST APIs and modern frontends built to ship on schedule.</p>
+            <div class="service-meta">
+              <div class="service-meta-item">⏱ <strong>2–6 weeks</strong></div>
+              <div class="service-meta-item">💰 From <strong>₹25,000</strong></div>
+            </div>
+            <a href="services.html" class="service-link">Learn more <span>→</span></a>
+          </article>
+
+          <article class="service-card" data-tilt>
+            <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
+            <h3 class="service-title">Spring Boot REST APIs</h3>
+            <p class="service-desc">Secure, documented, production-ready APIs with JWT auth, role-based access, caching and OpenAPI specs.</p>
+            <div class="service-meta">
+              <div class="service-meta-item">⏱ <strong>1–3 weeks</strong></div>
+              <div class="service-meta-item">💰 From <strong>₹15,000</strong></div>
+            </div>
+            <a href="services.html" class="service-link">Learn more <span>→</span></a>
+          </article>
+
+          <article class="service-card" data-tilt>
+            <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></div>
+            <h3 class="service-title">Database Design</h3>
+            <p class="service-desc">Normalized MySQL schemas, performance indexes, ER diagrams and migration playbooks for predictable scale.</p>
+            <div class="service-meta">
+              <div class="service-meta-item">⏱ <strong>3–10 days</strong></div>
+              <div class="service-meta-item">💰 From <strong>₹8,000</strong></div>
+            </div>
+            <a href="services.html" class="service-link">Learn more <span>→</span></a>
+          </article>
+
+          <article class="service-card" data-tilt>
+            <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+            <h3 class="service-title">Business Websites</h3>
+            <p class="service-desc">Conversion-focused, blazing-fast, SEO-ready websites that turn visitors into paying customers — not bounce stats.</p>
+            <div class="service-meta">
+              <div class="service-meta-item">⏱ <strong>1–2 weeks</strong></div>
+              <div class="service-meta-item">💰 From <strong>₹12,000</strong></div>
+            </div>
+            <a href="services.html" class="service-link">Learn more <span>→</span></a>
+          </article>
+
+          <article class="service-card" data-tilt>
+            <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg></div>
+            <h3 class="service-title">Management Systems</h3>
+            <p class="service-desc">Custom dashboards and admin panels — inventory, HR, school, hospital, billing — all tailored to your workflow.</p>
+            <div class="service-meta">
+              <div class="service-meta-item">⏱ <strong>3–8 weeks</strong></div>
+              <div class="service-meta-item">💰 From <strong>₹30,000</strong></div>
+            </div>
+            <a href="services.html" class="service-link">Learn more <span>→</span></a>
+          </article>
+
+          <article class="service-card" data-tilt>
+            <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg></div>
+            <h3 class="service-title">Cloud Deployment</h3>
+            <p class="service-desc">Production deployments on AWS / Render / Railway with CI/CD pipelines, SSL, monitoring and auto-scaling.</p>
+            <div class="service-meta">
+              <div class="service-meta-item">⏱ <strong>2–5 days</strong></div>
+              <div class="service-meta-item">💰 From <strong>₹6,000</strong></div>
+            </div>
+            <a href="services.html" class="service-link">Learn more <span>→</span></a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FEATURED PROJECTS ===== -->
+    <section style="background: var(--bg-secondary);">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Featured Work</span>
+          <h2 class="section-title">Recent projects, real impact</h2>
+          <p class="section-subtitle">A handful of products I've shipped — each one engineered to solve a real business problem.</p>
+        </div>
+        <div class="portfolio-grid reveal-stagger">
+
+          <article class="portfolio-card" data-category="webapp">
+            <div class="portfolio-image">
+              <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=550&fit=crop" alt="Analytics dashboard" loading="lazy" />
+              <div class="portfolio-overlay">
+                <div class="portfolio-overlay-actions">
+                  <a class="portfolio-action" href="#" aria-label="Live demo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg></a>
+                  <a class="portfolio-action" href="#" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.9 1.2 1.9 1.2 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg></a>
+                </div>
+              </div>
+            </div>
+            <div class="portfolio-content">
+              <div class="portfolio-category">SaaS Web App</div>
+              <h3 class="portfolio-title">FinPulse Analytics</h3>
+              <div class="portfolio-tech">
+                <span class="tech-tag">Spring Boot</span>
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">MySQL</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="portfolio-card" data-category="ecommerce">
+            <div class="portfolio-image">
+              <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=550&fit=crop" alt="E-commerce" loading="lazy" />
+              <div class="portfolio-overlay">
+                <div class="portfolio-overlay-actions">
+                  <a class="portfolio-action" href="#" aria-label="Live demo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg></a>
+                  <a class="portfolio-action" href="#" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.9 1.2 1.9 1.2 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg></a>
+                </div>
+              </div>
+            </div>
+            <div class="portfolio-content">
+              <div class="portfolio-category">E-Commerce</div>
+              <h3 class="portfolio-title">LuxeKart Storefront</h3>
+              <div class="portfolio-tech">
+                <span class="tech-tag">Java</span>
+                <span class="tech-tag">Hibernate</span>
+                <span class="tech-tag">Stripe</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="portfolio-card" data-category="ml">
+            <div class="portfolio-image">
+              <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=800&h=550&fit=crop" alt="AI / ML" loading="lazy" />
+              <div class="portfolio-overlay">
+                <div class="portfolio-overlay-actions">
+                  <a class="portfolio-action" href="#" aria-label="Live demo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg></a>
+                  <a class="portfolio-action" href="#" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.9 1.2 1.9 1.2 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg></a>
+                </div>
+              </div>
+            </div>
+            <div class="portfolio-content">
+              <div class="portfolio-category">Machine Learning</div>
+              <h3 class="portfolio-title">CreditScore.ai</h3>
+              <div class="portfolio-tech">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">scikit-learn</span>
+                <span class="tech-tag">Flask</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+        <div style="text-align:center; margin-top: var(--space-xl);">
+          <a href="portfolio.html" class="btn btn-secondary">See All Projects
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TESTIMONIALS ===== -->
+    <section>
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Testimonials</span>
+          <h2 class="section-title">What clients say</h2>
+          <p class="section-subtitle">A reputation built one shipped project at a time.</p>
+        </div>
+        <div class="testimonial-slider reveal-scale">
+          <div class="testimonial-track" id="testimonial-track">
+
+            <div class="testimonial-card">
+              <div class="testimonial-stars">★★★★★</div>
+              <p class="testimonial-quote">Working with him felt like hiring an entire engineering team. Our MVP launched in 21 days and closed our seed round two months early.</p>
+              <div class="testimonial-author">
+                <img class="testimonial-avatar" src="https://i.pravatar.cc/120?img=12" alt="Marcus Chen" loading="lazy"/>
+                <div class="testimonial-info">
+                  <div class="testimonial-name">Marcus Chen</div>
+                  <div class="testimonial-role">CEO, FinPulse · Singapore</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="testimonial-card">
+              <div class="testimonial-stars">★★★★★</div>
+              <p class="testimonial-quote">The Spring Boot APIs he built handled 4× traffic on launch day without a single hiccup. Clean code, clear communication, on-time delivery.</p>
+              <div class="testimonial-author">
+                <img class="testimonial-avatar" src="https://i.pravatar.cc/120?img=32" alt="Priya Sharma" loading="lazy"/>
+                <div class="testimonial-info">
+                  <div class="testimonial-name">Priya Sharma</div>
+                  <div class="testimonial-role">CTO, LuxeKart · Mumbai</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="testimonial-card">
+              <div class="testimonial-stars">★★★★★</div>
+              <p class="testimonial-quote">I've worked with 15+ developers on Upwork. He's the only one I rehired three times. Senior-level work at a freelance rate — rare combo.</p>
+              <div class="testimonial-author">
+                <img class="testimonial-avatar" src="https://i.pravatar.cc/120?img=47" alt="Daniel O'Connor" loading="lazy"/>
+                <div class="testimonial-info">
+                  <div class="testimonial-name">Daniel O'Connor</div>
+                  <div class="testimonial-role">Founder, RouteCraft · Dublin</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="slider-controls">
+            <button class="slider-arrow" id="slider-prev" aria-label="Previous"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg></button>
+            <div class="slider-dots" id="slider-dots"></div>
+            <button class="slider-arrow" id="slider-next" aria-label="Next"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== VIDEO DEMO ===== -->
+    <section style="background: var(--bg-secondary);">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Walkthrough</span>
+          <h2 class="section-title">See how I work</h2>
+          <p class="section-subtitle">A 3-minute walkthrough of my engineering process — from kickoff to deployment.</p>
+        </div>
+        <div class="video-wrapper reveal-scale" style="max-width: 900px; margin-inline:auto;">
+          <iframe src="https://www.youtube.com/embed/4L6IHb1sxOM?si=Xd2o1k9-O-GJt-cO" title="Engineering walkthrough" allowfullscreen loading="lazy"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-card reveal-scale">
+          <h2 class="cta-title">Got a project? Let's build it.</h2>
+          <p class="cta-desc">Free 30-minute consultation. No commitments, no fluff — just an honest conversation about whether I'm the right fit for your build.</p>
+          <div class="cta-actions">
+            <a href="contact.html" class="btn btn-primary btn-lg btn-magnetic">Book a Free Consultation
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="#" download class="btn btn-secondary btn-lg">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+              Download Resume
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== NEWSLETTER ===== -->
+    <section class="newsletter">
+      <div class="container">
+        <div class="newsletter-content">
+          <div class="reveal-left">
+            <h3 class="newsletter-title">Engineering insights, weekly.</h3>
+            <p class="newsletter-desc">Get one short, actionable email every Sunday — code patterns, performance tips, and lessons from real production builds.</p>
+          </div>
+          <form class="newsletter-form reveal-right" id="newsletter-form" novalidate>
+            <input type="email" class="newsletter-input" placeholder="your@email.com" required />
+            <button type="submit" class="btn btn-primary">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-brand-logo">
+            <span class="nav-logo-icon">D</span>
+            <span>Devfolio</span>
+          </div>
+          <p class="footer-desc">Senior Java Full-Stack engineer crafting reliable software for startups, agencies and businesses that demand excellence.</p>
+          <div class="footer-socials">
+            <a class="social-link" href="#" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.9 1.2 1.9 1.2 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg></a>
+            <a class="social-link" href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 0 0 2 3.5v17A1.5 1.5 0 0 0 3.5 22h17a1.5 1.5 0 0 0 1.5-1.5v-17A1.5 1.5 0 0 0 20.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 1 1 8.3 6.5a1.78 1.78 0 0 1-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0 0 13 14.19V19h-3v-9h2.9v1.3a3.11 3.11 0 0 1 2.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg></a>
+            <a class="social-link" href="#" aria-label="Twitter / X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+            <a class="social-link" href="#" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7.1c-1-.5-2-1-2.7-1.9-.7-.8-1.3-1.8-1.5-2.1-.2-.4 0-.5.2-.7.2-.2.4-.4.5-.6s.2-.3.3-.5c.1-.3 0-.5 0-.7s-.7-1.8-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.4-1.1 1.1-1.1 2.6s1.2 3 1.4 3.2c.2.2 2.3 3.5 5.6 4.9.8.4 1.4.6 1.9.7.8.2 1.5.2 2.1.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.1-1.4-.1-.2-.3-.3-.6-.4M12 22.5c-1.8 0-3.5-.5-5-1.4l-5.5 1.5 1.5-5.4A10.4 10.4 0 0 1 12 1.5c5.8 0 10.5 4.7 10.5 10.5S17.8 22.5 12 22.5"/></svg></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigate</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="services.html">Java Full-Stack</a></li>
+            <li><a href="services.html">Spring Boot APIs</a></li>
+            <li><a href="services.html">Database Design</a></li>
+            <li><a href="services.html">Business Websites</a></li>
+            <li><a href="services.html">Cloud Deployment</a></li>
+            <li><a href="services.html">Consulting</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Get in touch</h4>
+          <ul>
+            <li><a href="mailto:nikhilshirsathdhule@gmail.com">nikhilshirsathdhule@gmail.com</a></li>
+            <li><a href="tel:+919876543210">+91 98765 43210</a></li>
+            <li>Mon–Sat · 10:00–19:00 IST</li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="info-bar" style="gap: 1.5rem;">
+          <span>© 2026 Devfolio. Crafted with care.</span>
+          <span>Visitors: <strong id="visitor-count" style="color: var(--accent-secondary)">0</strong></span>
+          <span id="current-datetime"></span>
+        </div>
+        <span>Built with 🤍 by a developer who cares.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== Floating Buttons ===== -->
+  <a href="https://wa.me/919876543210" class="whatsapp-float" aria-label="WhatsApp" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7.1c-1-.5-2-1-2.7-1.9-.7-.8-1.3-1.8-1.5-2.1-.2-.4 0-.5.2-.7.2-.2.4-.4.5-.6s.2-.3.3-.5c.1-.3 0-.5 0-.7s-.7-1.8-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.4-1.1 1.1-1.1 2.6s1.2 3 1.4 3.2c.2.2 2.3 3.5 5.6 4.9.8.4 1.4.6 1.9.7.8.2 1.5.2 2.1.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.1-1.4-.1-.2-.3-.3-.6-.4M12 22.5c-1.8 0-3.5-.5-5-1.4l-5.5 1.5 1.5-5.4A10.4 10.4 0 0 1 12 1.5c5.8 0 10.5 4.7 10.5 10.5S17.8 22.5 12 22.5"/></svg>
+  </a>
+
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
+
+  <!-- Toast container -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- ===== SCRIPTS ===== -->
+  <script src="js/theme.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/animation.js"></script>
+  <script src="js/slider.js"></script>
+</body>
+</html>
