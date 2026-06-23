@@ -1,0 +1,227 @@
+/* ============================================
+   ANIMATIONS - Scroll Reveal, Entrance, Hover
+   ============================================ */
+
+/* ---------- Scroll Reveal States ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+.reveal-left.visible { opacity: 1; transform: translateX(0); }
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+.reveal-right.visible { opacity: 1; transform: translateX(0); }
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.92);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+.reveal-scale.visible { opacity: 1; transform: scale(1); }
+
+/* Stagger child reveals */
+.reveal-stagger > * {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal-stagger.visible > * { opacity: 1; transform: translateY(0); }
+.reveal-stagger.visible > *:nth-child(1) { transition-delay: 0.05s; }
+.reveal-stagger.visible > *:nth-child(2) { transition-delay: 0.1s; }
+.reveal-stagger.visible > *:nth-child(3) { transition-delay: 0.18s; }
+.reveal-stagger.visible > *:nth-child(4) { transition-delay: 0.26s; }
+.reveal-stagger.visible > *:nth-child(5) { transition-delay: 0.34s; }
+.reveal-stagger.visible > *:nth-child(6) { transition-delay: 0.42s; }
+.reveal-stagger.visible > *:nth-child(7) { transition-delay: 0.5s; }
+.reveal-stagger.visible > *:nth-child(8) { transition-delay: 0.58s; }
+.reveal-stagger.visible > *:nth-child(9) { transition-delay: 0.66s; }
+
+/* ---------- Animated Gradient Border ---------- */
+.gradient-border {
+  position: relative;
+  background: var(--bg-card);
+  border-radius: var(--r-xl);
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary), var(--accent-tertiary), var(--accent-primary));
+  background-size: 400% 400%;
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: gradientMove 8s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ---------- Floating Shapes ---------- */
+.floating-shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.3;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.shape-1 {
+  width: 360px; height: 360px;
+  background: var(--accent-primary);
+  top: 10%; left: -100px;
+  animation: floatShape1 18s ease-in-out infinite;
+}
+
+.shape-2 {
+  width: 320px; height: 320px;
+  background: var(--accent-secondary);
+  top: 50%; right: -80px;
+  animation: floatShape2 22s ease-in-out infinite;
+}
+
+.shape-3 {
+  width: 280px; height: 280px;
+  background: var(--accent-tertiary);
+  bottom: 5%; left: 30%;
+  animation: floatShape3 25s ease-in-out infinite;
+}
+
+@keyframes floatShape1 {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(60px, 80px); }
+}
+
+@keyframes floatShape2 {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(-50px, 60px); }
+}
+
+@keyframes floatShape3 {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(80px, -60px); }
+}
+
+/* ---------- Shimmer Loading ---------- */
+.shimmer {
+  background: linear-gradient(90deg,
+    var(--bg-tertiary) 0%,
+    var(--bg-glass) 50%,
+    var(--bg-tertiary) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s linear infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ---------- Tilt Hover Effect ---------- */
+.tilt-card {
+  transform-style: preserve-3d;
+  transition: transform var(--t-base);
+}
+
+/* ---------- Bounce In ---------- */
+@keyframes bounceIn {
+  0% { opacity: 0; transform: scale(0.3); }
+  50% { opacity: 1; transform: scale(1.05); }
+  70% { transform: scale(0.95); }
+  100% { transform: scale(1); }
+}
+
+.bounce-in { animation: bounceIn 0.7s cubic-bezier(0.34, 1.56, 0.64, 1); }
+
+/* ---------- Slide Up ---------- */
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(60px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- Spin Slow ---------- */
+@keyframes spinSlow {
+  to { transform: rotate(360deg); }
+}
+
+.spin-slow { animation: spinSlow 12s linear infinite; }
+
+/* ---------- Hero entrance ---------- */
+.hero-text > * {
+  animation: heroFadeIn 0.9s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+}
+
+.hero-text > *:nth-child(1) { animation-delay: 0.1s; }
+.hero-text > *:nth-child(2) { animation-delay: 0.25s; }
+.hero-text > *:nth-child(3) { animation-delay: 0.4s; }
+.hero-text > *:nth-child(4) { animation-delay: 0.55s; }
+.hero-text > *:nth-child(5) { animation-delay: 0.7s; }
+
+@keyframes heroFadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-visual {
+  animation: heroVisualIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.5s backwards;
+}
+
+@keyframes heroVisualIn {
+  from { opacity: 0; transform: translateX(40px) scale(0.95); }
+  to { opacity: 1; transform: translateX(0) scale(1); }
+}
+
+/* Gradient text shimmer */
+.text-shimmer {
+  background: linear-gradient(90deg,
+    var(--text-primary) 0%,
+    var(--accent-primary) 30%,
+    var(--accent-secondary) 50%,
+    var(--accent-primary) 70%,
+    var(--text-primary) 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textShimmer 4s linear infinite;
+}
+
+@keyframes textShimmer {
+  to { background-position: 200% center; }
+}
+
+/* Modal entrance */
+dialog.modal[open] {
+  animation: modalIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes modalIn {
+  from { opacity: 0; transform: scale(0.9) translateY(20px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
